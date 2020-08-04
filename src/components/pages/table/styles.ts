@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const MainContainer = styled.div`
   width: 100%;
@@ -22,4 +22,20 @@ export const GridElement = styled.div`
   align-items: center;
   padding: 10px;
   font-size: 18px;
+`;
+
+export const ImageContainer = styled.div`
+  margin-top: 10px;
+  fill: #000;
+  cursor: pointer;
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  ${({ isChanged }: { isChanged?: boolean }) =>
+    isChanged &&
+    css`
+      fill: #f88030;
+    `}
 `;

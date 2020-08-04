@@ -1,9 +1,9 @@
-import React, { BaseSyntheticEvent } from "react";
+import React from "react";
 
-import { MainContainer, GridElement, TableHeader, TableRow } from "./styles";
-import Checkbox from "components/inputs/checkbox";
+import TableList from "./table";
+import { FilterKey } from "apollo/requests";
 
-interface IDesertsData {
+export interface IDesertsData {
   id: string;
   name: string;
   calories: number;
@@ -16,12 +16,16 @@ interface IProps {
   changedNutritions: string[];
   desertsData: IDesertsData[];
   setChangedNutritions: (newValue: string[]) => void;
+  setChangedSortType: (sortType: FilterKey | null) => void;
+  changedSortType: FilterKey | null;
 }
 
 const Table = ({
   changedNutritions,
   desertsData,
   setChangedNutritions,
+  setChangedSortType,
+  changedSortType,
 }: IProps) => {
   const isAllDesertsChanged = desertsData.length === changedNutritions.length;
 
@@ -52,41 +56,15 @@ const Table = ({
   };
 
   return (
-    <MainContainer>
-      <TableHeader>
-        <GridElement>
-          <Checkbox
-            checked={isAllDesertsChanged}
-            onChange={changeAllElementsHandler}
-            name={"all-change"}
-          />
-        </GridElement>
-        <GridElement>Desert(100g serving)</GridElement>
-        <GridElement>Calories</GridElement>
-        <GridElement>Fat (g)</GridElement>
-        <GridElement>Carbs (g)</GridElement>
-        <GridElement>Protein (g)</GridElement>
-      </TableHeader>
-      {desertsData.map((elem) => {
-        const { calories, carbs, fat, id, name, protein } = elem;
-        return (
-          <TableRow>
-            <GridElement>
-              <Checkbox
-                checked={changedNutritions.includes(id)}
-                onChange={(e: BaseSyntheticEvent) => changedElementHandler(id)}
-                name={`${id}-checkbox`}
-              />
-            </GridElement>
-            <GridElement>{name}</GridElement>
-            <GridElement>{calories}</GridElement>
-            <GridElement>{fat}</GridElement>
-            <GridElement>{carbs}</GridElement>
-            <GridElement>{protein}</GridElement>
-          </TableRow>
-        );
-      })}
-    </MainContainer>
+    <TableList
+      changedNutritions={changedNutritions}
+      desertsData={desertsData}
+      changeAllElementsHandler={changeAllElementsHandler}
+      changedElementHandler={changedElementHandler}
+      isAllDesertsChanged={isAllDesertsChanged}
+      setChangedSortType={setChangedSortType}
+      changedSortType={changedSortType}
+    />
   );
 };
 
