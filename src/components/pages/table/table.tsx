@@ -42,11 +42,11 @@ const Table = ({
             name={"all-change"}
           />
         </GridElement>
-        {tableHeaderElements.map((elem) => {
+        {tableHeaderElements.map((elem, key) => {
           const { name, sortType } = elem;
 
           return (
-            <GridElement onClick={() => setChangedSortType(sortType)}>
+            <GridElement onClick={() => setChangedSortType(sortType)} key={key}>
               {name}
               <ImageContainer isChanged={changedSortType === sortType}>
                 <Sort />
@@ -55,10 +55,10 @@ const Table = ({
           );
         })}
       </TableHeader>
-      {desertsData.map((elem) => {
+      {desertsData.map((elem, key) => {
         const { calories, carbs, fat, id, name, protein } = elem;
         return (
-          <TableRow>
+          <TableRow key={id}>
             <GridElement>
               <Checkbox
                 checked={changedNutritions.includes(id)}

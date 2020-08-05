@@ -8,6 +8,7 @@ import {
   Controls,
   SubHeader,
   Button,
+  TableContainer,
 } from "./styles";
 import {
   GET_SORTED_DESERTS,
@@ -79,15 +80,17 @@ const MainPage = () => {
           </Button>
         </Controls>
       </SubHeader>
-      {desertsData && desertsData.getSortedDeserts && (
-        <Table
-          changedNutritions={changedNutritions}
-          desertsData={desertsData.getSortedDeserts}
-          setChangedNutritions={setChangedNutritions}
-          setChangedSortType={setChangedSortType}
-          changedSortType={changedSortType}
-        />
-      )}
+      <TableContainer>
+        {desertsData && desertsData.getSortedDeserts && (
+          <Table
+            changedNutritions={changedNutritions}
+            desertsData={desertsData.getSortedDeserts}
+            setChangedNutritions={setChangedNutritions}
+            setChangedSortType={setChangedSortType}
+            changedSortType={changedSortType}
+          />
+        )}
+      </TableContainer>
     </MainContainer>
   );
 };

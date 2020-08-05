@@ -44,7 +44,7 @@ const FormContainer = ({
         <InputContainer>
           <StyledLabel>Dessert Name*</StyledLabel>
           <StyledInput
-            onInput={inputDesertDataHandler}
+            onChange={inputDesertDataHandler}
             name={"name"}
             value={newDesertData.name}
             type={"text"}
@@ -53,7 +53,7 @@ const FormContainer = ({
         <InputContainer>
           <StyledLabel>Calories*</StyledLabel>
           <StyledInput
-            onInput={inputDesertDataHandler}
+            onChange={inputDesertDataHandler}
             name={"calories"}
             value={newDesertData.calories}
             type={"number"}
@@ -62,7 +62,7 @@ const FormContainer = ({
         <InputContainer>
           <StyledLabel>Fat*</StyledLabel>
           <StyledInput
-            onInput={inputDesertDataHandler}
+            onChange={inputDesertDataHandler}
             name={"fat"}
             value={newDesertData.fat}
             type={"number"}
@@ -71,7 +71,7 @@ const FormContainer = ({
         <InputContainer>
           <StyledLabel>Carbs*</StyledLabel>
           <StyledInput
-            onInput={inputDesertDataHandler}
+            onChange={inputDesertDataHandler}
             name={"carbs"}
             value={newDesertData.carbs}
             type={"number"}
@@ -80,7 +80,7 @@ const FormContainer = ({
         <InputContainer>
           <StyledLabel>Protein*</StyledLabel>
           <StyledInput
-            onInput={inputDesertDataHandler}
+            onChange={inputDesertDataHandler}
             name={"protein"}
             value={newDesertData.protein}
             type={"number"}

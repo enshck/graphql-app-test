@@ -21,6 +21,10 @@ export const MainContainer = styled.div`
       width: 100%;
       height: 100vh;
     `}
+
+  @media (max-width: 800px) {
+    background: transparent;
+  }
 `;
 
 export const ContentContainer = styled.div`
@@ -28,6 +32,11 @@ export const ContentContainer = styled.div`
   max-width: 600px;
   background: #fff;
   padding: 20px;
+
+  @media (max-width: 800px) {
+    max-width: 100%;
+    height: 100vh;
+  }
 `;
 
 export const WarningContainer = styled.div`
@@ -95,5 +104,8 @@ export const ModalHeader = styled.div`
   margin-bottom: 20px;
   img {
     cursor: pointer;
+  }
+  @media (max-width: 800px) {
+    margin: 20px 0;
   }
 `;

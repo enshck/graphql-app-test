@@ -1,7 +1,7 @@
 import React, { useState, BaseSyntheticEvent, useMemo } from "react";
 import { useMutation } from "@apollo/client";
 
-import { MainContainer, ModalHeader } from "./styles";
+import { MainContainer } from "./styles";
 import FormContainer from "./formContainer";
 import { initialDesertData } from "common";
 import { ADD_DESERTS } from "apollo/requests";

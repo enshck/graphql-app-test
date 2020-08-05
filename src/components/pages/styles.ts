@@ -20,6 +20,17 @@ export const NutritionListHeader = styled.div`
     font-size: 30px;
     font-weight: 400;
   }
+
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 22px;
+    }
+  }
+  @media (max-width: 400px) {
+    h2 {
+      font-size: 20px;
+    }
+  }
 `;
 
 export const SubHeader = styled.div`
@@ -37,6 +48,17 @@ export const SubHeader = styled.div`
     font-size: 18px;
     color: #ad2269;
   }
+
+  @media (max-width: 600px) {
+    P {
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 400px) {
+    P {
+      font-size: 14px;
+    }
+  }
 `;
 
 export const Controls = styled.div`
@@ -53,6 +75,13 @@ export const Button = styled.div<IButtonProps>`
   color: #46b171;
   padding: 5px;
   cursor: pointer;
+
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
+  @media (max-width: 400px) {
+    font-size: 14px;
+  }
 
   ${({ isDeleteButton }) =>
     isDeleteButton &&
@@ -72,4 +101,15 @@ export const ResetDataButton = styled.div`
   color: #fff;
   font-weight: 400;
   cursor: pointer;
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
+  @media (max-width: 400px) {
+    font-size: 14px;
+  }
+`;
+
+export const TableContainer = styled.div`
+  width: 100%;
+  overflow: auto;
 `;
